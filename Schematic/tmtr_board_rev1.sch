@@ -3916,6 +3916,12 @@ chip</description>
 <pin name="4" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas" swaplevel="2"/>
 </symbol>
+<symbol name="3.3V">
+<wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
+<text x="-1.016" y="3.556" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="3.3V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="CAP" prefix="C" uservalue="yes">
@@ -4027,6 +4033,19 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 </device>
 </devices>
 </deviceset>
+<deviceset name="3.3V" prefix="P+">
+<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="3.3V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="con-lstb">
@@ -4072,6 +4091,65 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
 <rectangle x1="3.556" y1="-0.254" x2="4.064" y2="0.254" layer="51"/>
 </package>
+<package name="MA05-2">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-5.715" y1="2.54" x2="-4.445" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="2.54" x2="-3.81" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="1.905" x2="-3.175" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="2.54" x2="-1.905" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="2.54" x2="-1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-5.715" y1="2.54" x2="-6.35" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="1.905" x2="-0.635" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="2.54" x2="0.635" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="2.54" x2="1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="2.54" x2="3.175" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="2.54" x2="3.81" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="1.905" x2="4.445" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="2.54" x2="5.715" y2="2.54" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="2.54" x2="1.27" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="-3.81" y1="-1.905" x2="-4.445" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="-1.905" x2="-1.905" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="-2.54" x2="-3.175" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-3.175" y1="-2.54" x2="-3.81" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="1.905" x2="-6.35" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-6.35" y1="-1.905" x2="-5.715" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-4.445" y1="-2.54" x2="-5.715" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.905" x2="0.635" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-2.54" x2="-0.635" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-2.54" x2="-1.27" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="3.81" y1="-1.905" x2="3.175" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="5.715" y1="-2.54" x2="4.445" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="4.445" y1="-2.54" x2="3.81" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="-1.905" x2="1.905" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="3.175" y1="-2.54" x2="1.905" y2="-2.54" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="1.905" x2="6.35" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="5.715" y1="2.54" x2="6.35" y2="1.905" width="0.1524" layer="21"/>
+<wire x1="6.35" y1="-1.905" x2="5.715" y2="-2.54" width="0.1524" layer="21"/>
+<pad name="1" x="-5.08" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="3" x="-2.54" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="5" x="0" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="7" x="2.54" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="9" x="5.08" y="-1.27" drill="1.016" shape="octagon"/>
+<pad name="2" x="-5.08" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="4" x="-2.54" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="6" x="0" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="8" x="2.54" y="1.27" drill="1.016" shape="octagon"/>
+<pad name="10" x="5.08" y="1.27" drill="1.016" shape="octagon"/>
+<text x="-5.588" y="-4.191" size="1.27" layer="21" ratio="10">1</text>
+<text x="-6.35" y="2.921" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="0" y="-4.191" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
+<text x="4.572" y="2.921" size="1.27" layer="21" ratio="10">10</text>
+<rectangle x1="-2.794" y1="-1.524" x2="-2.286" y2="-1.016" layer="51"/>
+<rectangle x1="-5.334" y1="-1.524" x2="-4.826" y2="-1.016" layer="51"/>
+<rectangle x1="-0.254" y1="-1.524" x2="0.254" y2="-1.016" layer="51"/>
+<rectangle x1="4.826" y1="-1.524" x2="5.334" y2="-1.016" layer="51"/>
+<rectangle x1="2.286" y1="-1.524" x2="2.794" y2="-1.016" layer="51"/>
+<rectangle x1="-5.334" y1="1.016" x2="-4.826" y2="1.524" layer="51"/>
+<rectangle x1="-2.794" y1="1.016" x2="-2.286" y2="1.524" layer="51"/>
+<rectangle x1="-0.254" y1="1.016" x2="0.254" y2="1.524" layer="51"/>
+<rectangle x1="2.286" y1="1.016" x2="2.794" y2="1.524" layer="51"/>
+<rectangle x1="4.826" y1="1.016" x2="5.334" y2="1.524" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="MA04-1">
@@ -4090,6 +4168,34 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <pin name="3" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="4" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
+<symbol name="MA05-2">
+<wire x1="3.81" y1="-7.62" x2="-3.81" y2="-7.62" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="0" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="2.54" y2="-2.54" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="-5.08" x2="2.54" y2="-5.08" width="0.6096" layer="94"/>
+<wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.6096" layer="94"/>
+<wire x1="-2.54" y1="-2.54" x2="-1.27" y2="-2.54" width="0.6096" layer="94"/>
+<wire x1="-2.54" y1="-5.08" x2="-1.27" y2="-5.08" width="0.6096" layer="94"/>
+<wire x1="-3.81" y1="7.62" x2="-3.81" y2="-7.62" width="0.4064" layer="94"/>
+<wire x1="3.81" y1="-7.62" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
+<wire x1="-3.81" y1="7.62" x2="3.81" y2="7.62" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="2.54" y2="5.08" width="0.6096" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="2.54" y2="2.54" width="0.6096" layer="94"/>
+<wire x1="-2.54" y1="5.08" x2="-1.27" y2="5.08" width="0.6096" layer="94"/>
+<wire x1="-2.54" y1="2.54" x2="-1.27" y2="2.54" width="0.6096" layer="94"/>
+<text x="-3.81" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-3.81" y="8.382" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="7.62" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="3" x="7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="5" x="7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="2" x="-7.62" y="-5.08" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+<pin name="4" x="-7.62" y="-2.54" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+<pin name="6" x="-7.62" y="0" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+<pin name="7" x="7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="9" x="7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+<pin name="8" x="-7.62" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+<pin name="10" x="-7.62" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="MA04-1" prefix="SV" uservalue="yes">
@@ -4104,6 +4210,36 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <connect gate="1" pin="2" pad="2"/>
 <connect gate="1" pin="3" pad="3"/>
 <connect gate="1" pin="4" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MA05-2" prefix="SV" uservalue="yes">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="MA05-2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MA05-2">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="10" pad="10"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
 </connects>
 <technologies>
 <technology name="">
@@ -4307,6 +4443,48 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <hole x="-3.1" y="4.25" drill="2.1336"/>
 <hole x="-3.1" y="-4.25" drill="2.1336"/>
 </package>
+<package name="TO220-ADJ">
+<wire x1="5.08" y1="-1.905" x2="-5.08" y2="-1.905" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="-1.905" x2="-5.08" y2="1.905" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="1.905" x2="-5.08" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="-5.08" y1="2.54" x2="5.08" y2="2.54" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="5.08" y2="1.905" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="1.905" x2="5.08" y2="-1.905" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="1.905" x2="-5.08" y2="1.905" width="0.2032" layer="21"/>
+<wire x1="5.08" y1="2.54" x2="8.255" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="8.255" y1="2.54" x2="8.255" y2="-5.715" width="0.2032" layer="51"/>
+<wire x1="8.255" y1="-5.715" x2="9.525" y2="-5.715" width="0.2032" layer="51"/>
+<wire x1="9.525" y1="-5.715" x2="9.525" y2="3.81" width="0.2032" layer="51"/>
+<wire x1="9.525" y1="3.81" x2="-9.525" y2="3.81" width="0.2032" layer="51"/>
+<wire x1="-9.525" y1="3.81" x2="-9.525" y2="-5.715" width="0.2032" layer="51"/>
+<wire x1="-9.525" y1="-5.715" x2="-8.255" y2="-5.715" width="0.2032" layer="51"/>
+<wire x1="-8.255" y1="-5.715" x2="-8.255" y2="2.54" width="0.2032" layer="51"/>
+<wire x1="-8.255" y1="2.54" x2="-5.08" y2="2.54" width="0.2032" layer="51"/>
+<pad name="ADJ" x="-2.54" y="0" drill="1" diameter="1.8796" shape="square"/>
+<pad name="OUT" x="0" y="0" drill="1" diameter="1.8796"/>
+<pad name="IN" x="2.54" y="0" drill="1" diameter="1.8796"/>
+</package>
+<package name="SOT223">
+<description>&lt;b&gt;SOT-223&lt;/b&gt;</description>
+<wire x1="3.2766" y1="1.651" x2="3.2766" y2="-1.651" width="0.2032" layer="21"/>
+<wire x1="3.2766" y1="-1.651" x2="-3.2766" y2="-1.651" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="-1.651" x2="-3.2766" y2="1.651" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="1.651" x2="3.2766" y2="1.651" width="0.2032" layer="21"/>
+<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
+<text x="-0.8255" y="4.5085" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-1.0795" y="-0.1905" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+</package>
 </packages>
 <symbols>
 <symbol name="POWERJACK">
@@ -4322,6 +4500,20 @@ Button commonly used for reset or general input. Spark Fun Electronics SKU : COM
 <pin name="GNDBREAK" x="2.54" y="5.08" visible="off" length="short" rot="R180"/>
 <pin name="GND" x="2.54" y="2.54" visible="off" length="short" rot="R180"/>
 <pin name="PWR" x="2.54" y="7.62" visible="off" length="short" rot="R180"/>
+</symbol>
+<symbol name="78ADJ-2">
+<wire x1="-5.08" y1="-5.08" x2="5.08" y2="-5.08" width="0.4064" layer="94"/>
+<wire x1="5.08" y1="-5.08" x2="5.08" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="5.08" y1="2.54" x2="-5.08" y2="2.54" width="0.4064" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="-5.08" width="0.4064" layer="94"/>
+<text x="2.54" y="-7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+<text x="-2.032" y="-4.318" size="1.524" layer="95">ADJ</text>
+<text x="-4.445" y="-0.635" size="1.524" layer="95">IN</text>
+<text x="0.635" y="-0.635" size="1.524" layer="95">OUT</text>
+<pin name="IN" x="-7.62" y="0" visible="off" length="short" direction="in"/>
+<pin name="ADJ" x="0" y="-7.62" visible="off" length="short" direction="in" rot="R90"/>
+<pin name="OUT" x="7.62" y="0" visible="off" length="short" direction="out" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -4397,6 +4589,35 @@ This is the standard 5.5mm barrel jack for power. The PTH is the most common, pr
 <connect gate="G$1" pin="GND" pad="BARREL"/>
 <connect gate="G$1" pin="GNDBREAK" pad="SPRING"/>
 <connect gate="G$1" pin="PWR" pad="BREAK"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="V_REG_317">
+<description>&lt;b&gt;Voltage Regulator&lt;/b&gt;
+Standard LM317 adjustable voltage regulator. AOI (Adjust Output Input). Google 'LM317 Calculator' for easy to use app to get the two resistor values needed. 240/720 for 5V output. 240/390 for 3.3V output. Spark Fun Electronics SKU : COM-00527</description>
+<gates>
+<gate name="G$1" symbol="78ADJ-2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="SINK" package="TO220-ADJ">
+<connects>
+<connect gate="G$1" pin="ADJ" pad="ADJ"/>
+<connect gate="G$1" pin="IN" pad="IN"/>
+<connect gate="G$1" pin="OUT" pad="OUT"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="SMD" package="SOT223">
+<connects>
+<connect gate="G$1" pin="ADJ" pad="1"/>
+<connect gate="G$1" pin="IN" pad="3"/>
+<connect gate="G$1" pin="OUT" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -11340,6 +11561,100 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 </deviceset>
 </devicesets>
 </library>
+<library name="SparkFun5">
+<packages>
+<package name="ALPS_POT">
+<wire x1="8" y1="6.2" x2="8" y2="-6.2" width="0.127" layer="21"/>
+<wire x1="8" y1="-6.2" x2="-5.6" y2="-6.2" width="0.127" layer="21"/>
+<wire x1="-5.6" y1="-6.2" x2="-5.6" y2="6.2" width="0.127" layer="21"/>
+<wire x1="-5.6" y1="6.2" x2="8" y2="6.2" width="0.127" layer="21"/>
+<pad name="P$1" x="7" y="-2.5" drill="1" shape="square"/>
+<pad name="P$2" x="7" y="0" drill="1" shape="square"/>
+<pad name="P$3" x="7" y="2.5" drill="1" shape="square"/>
+<pad name="P$4" x="0" y="-4.4" drill="2" shape="octagon"/>
+<pad name="P$5" x="0" y="4.4" drill="2" shape="octagon"/>
+</package>
+<package name="TRIM_POT">
+<pad name="2" x="0" y="2.54" drill="1"/>
+<pad name="3" x="0" y="-2.54" drill="1"/>
+<pad name="1" x="5.08" y="0" drill="1"/>
+</package>
+<package name="3362U">
+<wire x1="-1.27" y1="-1.016" x2="6.35" y2="-1.016" width="0.127" layer="21"/>
+<wire x1="6.35" y1="-1.016" x2="6.35" y2="6.096" width="0.127" layer="21"/>
+<wire x1="6.35" y1="6.096" x2="-1.27" y2="6.096" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="6.096" x2="-1.27" y2="-1.016" width="0.127" layer="21"/>
+<wire x1="-1.27" y1="-1.27" x2="6.35" y2="-1.27" width="0.127" layer="21"/>
+<pad name="P$1" x="0" y="2.54" drill="1.016" shape="square"/>
+<pad name="P$2" x="2.54" y="2.54" drill="1.016"/>
+<pad name="P$3" x="5.08" y="2.54" drill="1.016"/>
+</package>
+</packages>
+<symbols>
+<symbol name="POT">
+<wire x1="0" y1="-5.08" x2="0" y2="-4.572" width="0.1524" layer="94"/>
+<wire x1="0" y1="-4.572" x2="-1.016" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="-3.81" x2="1.27" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="-1.016" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="-1.27" x2="1.27" y2="0" width="0.254" layer="94"/>
+<wire x1="1.27" y1="0" x2="-1.016" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="1.27" x2="1.27" y2="2.54" width="0.254" layer="94"/>
+<wire x1="1.27" y1="2.54" x2="-1.016" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-1.016" y1="3.81" x2="0" y2="4.572" width="0.254" layer="94"/>
+<wire x1="0" y1="4.572" x2="0" y2="5.08" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="0" x2="2.54" y2="1.27" width="0.2032" layer="94"/>
+<wire x1="2.54" y1="-1.27" x2="1.27" y2="0" width="0.2032" layer="94"/>
+<wire x1="2.54" y1="1.27" x2="2.54" y2="-1.27" width="0.2032" layer="94"/>
+<wire x1="2.032" y1="-4.699" x2="2.032" y2="-2.159" width="0.1524" layer="94"/>
+<wire x1="2.032" y1="-2.159" x2="2.667" y2="-3.429" width="0.1524" layer="94"/>
+<wire x1="2.667" y1="-3.429" x2="1.397" y2="-3.429" width="0.1524" layer="94"/>
+<wire x1="1.397" y1="-3.429" x2="2.032" y2="-2.159" width="0.1524" layer="94"/>
+<text x="5.08" y="-10.16" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<pin name="A" x="0" y="-7.62" visible="off" length="short" direction="pas" rot="R90"/>
+<pin name="E" x="0" y="7.62" visible="off" length="short" direction="pas" rot="R270"/>
+<pin name="S" x="5.08" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="POT">
+<gates>
+<gate name="G$1" symbol="POT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="ALPS_POT">
+<connects>
+<connect gate="G$1" pin="A" pad="P$3"/>
+<connect gate="G$1" pin="E" pad="P$1"/>
+<connect gate="G$1" pin="S" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="TRIM" package="TRIM_POT">
+<connects>
+<connect gate="G$1" pin="A" pad="3"/>
+<connect gate="G$1" pin="E" pad="2"/>
+<connect gate="G$1" pin="S" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="100K_3362U" package="3362U">
+<connects>
+<connect gate="G$1" pin="A" pad="P$3"/>
+<connect gate="G$1" pin="E" pad="P$1"/>
+<connect gate="G$1" pin="S" pad="P$2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -11388,6 +11703,16 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <part name="GND6" library="SparkFun1" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="FRAME3" library="frames" deviceset="A4L-LOC" device=""/>
+<part name="U6" library="SparkFun4" deviceset="V_REG_317" device="SINK"/>
+<part name="R6" library="resistor" deviceset="R-EU_" device="0204/5"/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="0204/5"/>
+<part name="P+3" library="SparkFun1" deviceset="3.3V" device=""/>
+<part name="C6" library="SparkFun1" deviceset="CAP" device="PTH"/>
+<part name="C12" library="rcl" deviceset="CPOL-EU" device="E2.5-6"/>
+<part name="R8" library="resistor" deviceset="R-EU_" device="M0805"/>
+<part name="GND7" library="SparkFun1" deviceset="GND" device=""/>
+<part name="SV1" library="con-lstb" deviceset="MA05-2" device=""/>
+<part name="POT1" library="SparkFun5" deviceset="POT" device="100K_3362U"/>
 </parts>
 <sheets>
 <sheet>
@@ -11448,6 +11773,29 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <instance part="GND6" gate="1" x="99.06" y="48.26" smashed="yes">
 <attribute name="VALUE" x="96.52" y="45.72" size="1.778" layer="96"/>
 </instance>
+<instance part="U6" gate="G$1" x="158.75" y="142.24" smashed="yes">
+<attribute name="NAME" x="157.48" y="149.86" size="1.778" layer="95"/>
+<attribute name="VALUE" x="157.48" y="147.32" size="1.778" layer="96"/>
+</instance>
+<instance part="R6" gate="G$1" x="158.75" y="121.92" smashed="yes" rot="R90">
+<attribute name="NAME" x="156.21" y="123.19" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="162.052" y="118.11" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R7" gate="G$1" x="166.37" y="129.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="167.64" y="127" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="170.18" y="132.842" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="P+3" gate="G$1" x="184.15" y="144.78" smashed="yes">
+<attribute name="VALUE" x="182.88" y="148.59" size="1.778" layer="96"/>
+</instance>
+<instance part="C6" gate="G$1" x="194.31" y="132.08" smashed="yes" rot="R180">
+<attribute name="NAME" x="190.5" y="127" size="1.778" layer="95"/>
+<attribute name="VALUE" x="192.786" y="134.239" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C12" gate="G$1" x="186.69" y="132.08" smashed="yes">
+<attribute name="NAME" x="180.34" y="127" size="1.778" layer="95"/>
+<attribute name="VALUE" x="187.833" y="127.4826" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11465,6 +11813,8 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <pinref part="C5" gate="G$1" pin="+"/>
 <junction x="146.05" y="142.24"/>
 <junction x="138.43" y="142.24"/>
+<pinref part="U6" gate="G$1" pin="IN"/>
+<wire x1="151.13" y1="142.24" x2="146.05" y2="142.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -11497,6 +11847,17 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <wire x1="71.12" y1="127" x2="71.12" y2="124.46" width="0.1524" layer="91"/>
 <junction x="71.12" y="124.46"/>
 <wire x1="71.12" y1="124.46" x2="71.12" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="158.75" y1="116.84" x2="158.75" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="114.3" x2="194.31" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="194.31" y1="127" x2="194.31" y2="114.3" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="114.3" x2="186.69" y2="127" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="114.3" x2="158.75" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="C12" gate="G$1" pin="-"/>
+<wire x1="158.75" y1="114.3" x2="146.05" y2="114.3" width="0.1524" layer="91"/>
+<junction x="158.75" y="114.3"/>
+<junction x="146.05" y="114.3"/>
 </segment>
 <segment>
 <pinref part="J2" gate="1" pin="2"/>
@@ -11569,6 +11930,37 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <wire x1="99.06" y1="67.31" x2="105.41" y2="67.31" width="0.1524" layer="91"/>
 <junction x="99.06" y="67.31"/>
 <label x="105.41" y="67.31" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="3.3V" class="0">
+<segment>
+<wire x1="171.45" y1="142.24" x2="166.37" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="184.15" y1="142.24" x2="171.45" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="171.45" y1="129.54" x2="171.45" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="184.15" y1="144.78" x2="184.15" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="U6" gate="G$1" pin="OUT"/>
+<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="P+3" gate="G$1" pin="3.3V"/>
+</segment>
+</net>
+<net name="N$20" class="0">
+<segment>
+<wire x1="161.29" y1="129.54" x2="158.75" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="158.75" y1="129.54" x2="158.75" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="158.75" y1="134.62" x2="158.75" y2="127" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="U6" gate="G$1" pin="ADJ"/>
+<pinref part="R6" gate="G$1" pin="2"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<wire x1="184.15" y1="142.24" x2="186.69" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="142.24" x2="194.31" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="194.31" y1="134.62" x2="194.31" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="186.69" y1="134.62" x2="186.69" y2="142.24" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="2"/>
+<pinref part="C12" gate="G$1" pin="+"/>
 </segment>
 </net>
 </nets>
@@ -11652,6 +12044,15 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <attribute name="NAME" x="153.67" y="147.5486" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="153.67" y="142.748" size="1.778" layer="96" rot="MR0"/>
 </instance>
+<instance part="R8" gate="G$1" x="220.98" y="120.65" smashed="yes" rot="MR0">
+<attribute name="NAME" x="222.25" y="123.19" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="224.79" y="117.348" size="1.778" layer="96" rot="MR0"/>
+</instance>
+<instance part="GND7" gate="1" x="194.31" y="115.57" smashed="yes">
+<attribute name="VALUE" x="191.77" y="113.03" size="1.778" layer="96"/>
+</instance>
+<instance part="SV1" gate="G$1" x="226.06" y="95.25"/>
+<instance part="POT1" gate="G$1" x="222.25" y="71.12"/>
 </instances>
 <busses>
 </busses>
@@ -11677,6 +12078,15 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <wire x1="229.87" y1="151.13" x2="229.87" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="229.87" y1="147.32" x2="226.06" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="229.87" y1="120.65" x2="226.06" y2="120.65" width="0.1524" layer="91"/>
+<wire x1="229.87" y1="147.32" x2="229.87" y2="120.65" width="0.1524" layer="91"/>
+<junction x="229.87" y="147.32"/>
+</segment>
+<segment>
+<wire x1="218.44" y1="100.33" x2="212.09" y2="100.33" width="0.1524" layer="91"/>
+<label x="212.09" y="100.33" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="SV1" gate="G$1" pin="10"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -11718,6 +12128,28 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <pinref part="U$3" gate="A" pin="4"/>
 <pinref part="U$3" gate="A" pin="6"/>
 <pinref part="U$3" gate="A" pin="8"/>
+</segment>
+<segment>
+<wire x1="218.44" y1="97.79" x2="212.09" y2="97.79" width="0.1524" layer="91"/>
+<label x="212.09" y="97.79" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="SV1" gate="G$1" pin="8"/>
+</segment>
+<segment>
+<pinref part="SW1" gate="S" pin="1"/>
+<wire x1="201.93" y1="123.19" x2="200.66" y2="123.19" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="123.19" x2="200.66" y2="120.65" width="0.1524" layer="91"/>
+<pinref part="SW1" gate="S" pin="2"/>
+<wire x1="200.66" y1="120.65" x2="201.93" y2="120.65" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="120.65" x2="194.31" y2="120.65" width="0.1524" layer="91"/>
+<junction x="200.66" y="120.65"/>
+<wire x1="194.31" y1="120.65" x2="194.31" y2="118.11" width="0.1524" layer="91"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="POT1" gate="G$1" pin="A"/>
+<wire x1="222.25" y1="63.5" x2="222.25" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="222.25" y1="60.96" x2="219.71" y2="60.96" width="0.1524" layer="91"/>
+<label x="219.71" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$12" class="0">
@@ -11854,6 +12286,121 @@ This is the standard AVR In Circuit Serial Programming header. Minimal, but incl
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="146.05" x2="160.02" y2="146.05" width="0.1524" layer="91"/>
 <label x="160.02" y="146.05" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="DB7" class="0">
+<segment>
+<wire x1="218.44" y1="95.25" x2="212.09" y2="95.25" width="0.1524" layer="91"/>
+<label x="212.09" y="95.25" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="SV1" gate="G$1" pin="6"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD7(AIN1)"/>
+<wire x1="144.78" y1="105.41" x2="138.43" y2="105.41" width="0.1524" layer="91"/>
+<label x="144.78" y="105.41" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="DB6" class="0">
+<segment>
+<wire x1="218.44" y1="92.71" x2="212.09" y2="92.71" width="0.1524" layer="91"/>
+<label x="212.09" y="92.71" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="SV1" gate="G$1" pin="4"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD6(AIN0)"/>
+<wire x1="138.43" y1="107.95" x2="144.78" y2="107.95" width="0.1524" layer="91"/>
+<label x="144.78" y="107.95" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="DB5" class="0">
+<segment>
+<wire x1="218.44" y1="90.17" x2="212.09" y2="90.17" width="0.1524" layer="91"/>
+<label x="212.09" y="90.17" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="SV1" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD5(T1)"/>
+<wire x1="138.43" y1="110.49" x2="144.78" y2="110.49" width="0.1524" layer="91"/>
+<label x="144.78" y="110.49" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="DB4" class="0">
+<segment>
+<wire x1="233.68" y1="95.25" x2="240.03" y2="95.25" width="0.1524" layer="91"/>
+<label x="240.03" y="95.25" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD4(XCK/T0)"/>
+<wire x1="138.43" y1="113.03" x2="144.78" y2="113.03" width="0.1524" layer="91"/>
+<label x="144.78" y="113.03" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="RS" class="0">
+<segment>
+<wire x1="233.68" y1="97.79" x2="240.03" y2="97.79" width="0.1524" layer="91"/>
+<label x="240.03" y="97.79" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD3(INT1)"/>
+<wire x1="138.43" y1="115.57" x2="144.78" y2="115.57" width="0.1524" layer="91"/>
+<label x="144.78" y="115.57" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="EN" class="0">
+<segment>
+<wire x1="233.68" y1="100.33" x2="240.03" y2="100.33" width="0.1524" layer="91"/>
+<label x="240.03" y="100.33" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD2(INT0)"/>
+<wire x1="138.43" y1="118.11" x2="144.78" y2="118.11" width="0.1524" layer="91"/>
+<label x="144.78" y="118.11" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="R/W" class="0">
+<segment>
+<wire x1="233.68" y1="92.71" x2="240.03" y2="92.71" width="0.1524" layer="91"/>
+<label x="240.03" y="92.71" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PD1(TXD)"/>
+<wire x1="138.43" y1="120.65" x2="144.78" y2="120.65" width="0.1524" layer="91"/>
+<label x="144.78" y="120.65" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<wire x1="212.09" y1="120.65" x2="213.36" y2="120.65" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="2"/>
+<pinref part="SW1" gate="S" pin="4"/>
+<pinref part="SW1" gate="S" pin="3"/>
+<wire x1="213.36" y1="120.65" x2="215.9" y2="120.65" width="0.1524" layer="91"/>
+<wire x1="212.09" y1="123.19" x2="213.36" y2="123.19" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="123.19" x2="213.36" y2="120.65" width="0.1524" layer="91"/>
+<junction x="213.36" y="120.65"/>
+<pinref part="IC1" gate="G$1" pin="PD0(RXD)"/>
+<wire x1="138.43" y1="123.19" x2="189.23" y2="123.19" width="0.1524" layer="91"/>
+<wire x1="189.23" y1="123.19" x2="189.23" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="189.23" y1="134.62" x2="213.36" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="134.62" x2="213.36" y2="123.19" width="0.1524" layer="91"/>
+<junction x="213.36" y="123.19"/>
+</segment>
+</net>
+<net name="5V\" class="0">
+<segment>
+<pinref part="POT1" gate="G$1" pin="E"/>
+<wire x1="222.25" y1="78.74" x2="222.25" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="222.25" y1="81.28" x2="219.71" y2="81.28" width="0.1524" layer="91"/>
+<label x="219.71" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="POT1" gate="G$1" pin="S"/>
+<wire x1="227.33" y1="71.12" x2="240.03" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="240.03" y1="71.12" x2="240.03" y2="90.17" width="0.1524" layer="91"/>
+<pinref part="SV1" gate="G$1" pin="1"/>
+<wire x1="240.03" y1="90.17" x2="233.68" y2="90.17" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
