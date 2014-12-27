@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="no"/>
@@ -11966,15 +11966,15 @@ filled</description>
 <part name="R3" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="GND6" library="SparkFun1" deviceset="GND" device=""/>
-<part name="R7" library="resistor" deviceset="R-EU_" device="M0805"/>
+<part name="R9" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="FRAME3" library="frames" deviceset="A4L-LOC" device=""/>
 <part name="P+3" library="SparkFun1" deviceset="3.3V" device=""/>
 <part name="C6" library="SparkFun1" deviceset="CAP" device="PTH"/>
 <part name="C5" library="rcl" deviceset="CPOL-EU" device="E2.5-6"/>
-<part name="R9" library="resistor" deviceset="R-EU_" device="M0805"/>
+<part name="R8" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="GND7" library="SparkFun1" deviceset="GND" device=""/>
 <part name="J5" library="con-lstb" deviceset="MA05-2" device=""/>
-<part name="R8" library="resistor" deviceset="R-EU_" device="M0805"/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="U4" library="adafruit" deviceset="MAX6675" device="" value="MAX31855"/>
 <part name="U$6" library="SparkFun3" deviceset="5V" device=""/>
 <part name="P+1" library="SparkFun1" deviceset="3.3V" device=""/>
@@ -11992,8 +11992,8 @@ filled</description>
 <part name="R1" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="R10" library="resistor" deviceset="R-EU_" device="M0805"/>
 <part name="R11" library="resistor" deviceset="R-EU_" device="M0805"/>
-<part name="LED3" library="led" deviceset="LED" device="CHIPLED_0805"/>
-<part name="LED4" library="led" deviceset="LED" device="CHIPLED_0805"/>
+<part name="LED1" library="led" deviceset="LED" device="CHIPLED_0805"/>
+<part name="LED2" library="led" deviceset="LED" device="CHIPLED_0805"/>
 <part name="J1" library="con-molex" deviceset="22-23-2021" device=""/>
 <part name="J4" library="con-molex" deviceset="22-23-2021" device=""/>
 <part name="J7" library="con-molex" deviceset="22-23-2021" device=""/>
@@ -12335,11 +12335,11 @@ filled</description>
 <instance part="U$5" gate="G$1" x="229.87" y="151.13" smashed="yes">
 <attribute name="VALUE" x="228.6" y="154.94" size="1.778" layer="96"/>
 </instance>
-<instance part="R7" gate="G$1" x="149.86" y="130.81" smashed="yes" rot="MR0">
+<instance part="R9" gate="G$1" x="149.86" y="130.81" smashed="yes" rot="MR0">
 <attribute name="NAME" x="151.13" y="127" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="153.67" y="127.508" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="R9" gate="G$1" x="229.87" y="133.35" smashed="yes" rot="MR270">
+<instance part="R8" gate="G$1" x="229.87" y="133.35" smashed="yes" rot="MR270">
 <attribute name="NAME" x="224.79" y="133.35" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="233.172" y="137.16" size="1.778" layer="96" rot="MR270"/>
 </instance>
@@ -12350,7 +12350,7 @@ filled</description>
 <attribute name="VALUE" x="222.25" y="85.09" size="1.778" layer="96"/>
 <attribute name="NAME" x="224.79" y="104.14" size="1.778" layer="95"/>
 </instance>
-<instance part="R8" gate="G$1" x="220.98" y="140.97" smashed="yes" rot="MR0">
+<instance part="R7" gate="G$1" x="220.98" y="140.97" smashed="yes" rot="MR0">
 <attribute name="NAME" x="222.25" y="143.51" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="224.79" y="137.668" size="1.778" layer="96" rot="MR0"/>
 </instance>
@@ -12368,11 +12368,11 @@ filled</description>
 <attribute name="NAME" x="226.06" y="60.96" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="236.982" y="64.77" size="1.778" layer="96" rot="MR270"/>
 </instance>
-<instance part="LED3" gate="G$1" x="208.28" y="147.32" smashed="yes" rot="MR90">
+<instance part="LED1" gate="G$1" x="208.28" y="147.32" smashed="yes" rot="MR90">
 <attribute name="NAME" x="204.47" y="151.13" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="203.708" y="153.035" size="1.778" layer="96" rot="MR180"/>
 </instance>
-<instance part="LED4" gate="G$1" x="208.28" y="140.97" smashed="yes" rot="MR90">
+<instance part="LED2" gate="G$1" x="208.28" y="140.97" smashed="yes" rot="MR90">
 <attribute name="NAME" x="204.47" y="137.16" size="1.778" layer="95" rot="MR180"/>
 <attribute name="VALUE" x="203.708" y="146.685" size="1.778" layer="96" rot="MR180"/>
 </instance>
@@ -12423,10 +12423,10 @@ filled</description>
 <wire x1="229.87" y1="151.13" x2="229.87" y2="147.32" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="229.87" y1="147.32" x2="226.06" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="229.87" y1="147.32" x2="229.87" y2="140.97" width="0.1524" layer="91"/>
 <junction x="229.87" y="147.32"/>
-<pinref part="R8" gate="G$1" pin="1"/>
+<pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="229.87" y1="140.97" x2="229.87" y2="138.43" width="0.1524" layer="91"/>
 <wire x1="229.87" y1="140.97" x2="226.06" y2="140.97" width="0.1524" layer="91"/>
 <junction x="229.87" y="140.97"/>
@@ -12502,7 +12502,7 @@ filled</description>
 <net name="N$12" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
-<pinref part="LED3" gate="G$1" pin="A"/>
+<pinref part="LED1" gate="G$1" pin="A"/>
 <wire x1="210.82" y1="147.32" x2="215.9" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -12602,7 +12602,7 @@ filled</description>
 <net name="LED1" class="0">
 <segment>
 <label x="199.39" y="140.97" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="LED4" gate="G$1" pin="C"/>
+<pinref part="LED2" gate="G$1" pin="C"/>
 <wire x1="203.2" y1="140.97" x2="199.39" y2="140.97" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -12613,7 +12613,7 @@ filled</description>
 </net>
 <net name="VIN_SENSE" class="0">
 <segment>
-<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="130.81" x2="160.02" y2="130.81" width="0.1524" layer="91"/>
 <label x="160.02" y="130.81" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -12704,7 +12704,7 @@ filled</description>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="229.87" y1="123.19" x2="229.87" y2="128.27" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="PD0(RXD)"/>
 <wire x1="138.43" y1="123.19" x2="229.87" y2="123.19" width="0.1524" layer="91"/>
@@ -12727,15 +12727,15 @@ filled</description>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="LED4" gate="G$1" pin="A"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="LED2" gate="G$1" pin="A"/>
 <wire x1="210.82" y1="140.97" x2="215.9" y2="140.97" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="LED2" class="0">
 <segment>
 <label x="199.39" y="147.32" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="LED3" gate="G$1" pin="C"/>
+<pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="203.2" y1="147.32" x2="199.39" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
@@ -12793,7 +12793,7 @@ filled</description>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="R9" gate="G$1" pin="2"/>
 <pinref part="U3" gate="G$1" pin="ADC6"/>
 <wire x1="144.78" y1="130.81" x2="138.43" y2="130.81" width="0.1524" layer="91"/>
 </segment>
