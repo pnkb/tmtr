@@ -1,0 +1,13 @@
+Importer Log Report
+Project : con-lstb.PrjPcb
+
+Section : Analyze Document - D:\svn\tmtr\trunk\Schematic\con-lstb.lbr
+    Analyzing data of D:\svn\tmtr\trunk\Schematic\con-lstb.lbr
+    Load settings
+    Load layers 59
+    Load Library library
+    Load Library ""
+    Load Packages 41
+    Load Symbols 24
+    Load DeviceSets 41
+EndSection
