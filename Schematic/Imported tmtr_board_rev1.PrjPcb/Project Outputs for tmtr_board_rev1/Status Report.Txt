@@ -1,0 +1,22 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [tmtr_board_rev1.PrjPcb]
+   Generated File[tmtr_board_rev1.GTL]
+   Generated File[tmtr_board_rev1.GBL]
+   Generated File[tmtr_board_rev1.GTO]
+   Generated File[tmtr_board_rev1.GTS]
+   Generated File[tmtr_board_rev1.GBS]
+   Generated File[tmtr_board_rev1.GBO]
+   Generated File[tmtr_board_rev1.GM1]
+   Generated File[tmtr_board_rev1.GM29]
+   Generated File[tmtr_board_rev1.GD1]
+   Generated File[tmtr_board_rev1.GG1]
+   Generated File[tmtr_board_rev1.RUL]
+   Generated File[tmtr_board_rev1.EXTREP]
+   Generated File[tmtr_board_rev1.REP]
+
+
+Files Generated   : 13
+Documents Printed : 0
+
+Finished Output Generation At 12:59:08 AM On 1/8/2015
