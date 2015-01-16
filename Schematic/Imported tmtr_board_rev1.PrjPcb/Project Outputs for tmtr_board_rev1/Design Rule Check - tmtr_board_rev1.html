@@ -1,0 +1,520 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD14\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">1/16/2015</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">7:35:36 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc" class="file"><acronym title="D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc">D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">35</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDASA4UB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAEB4UB">Clearance Constraint (Gap=0.203mm) (IsVia),(IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAKB4UB">Clearance Constraint (Gap=0.203mm) (IsPad),(IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAQB4UB">Clearance Constraint (Gap=0.203mm) (IsPad),(IsPad)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAWB4UB">Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),(IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDA2B4UB">Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),(IsPad)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDALC4UB">Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),((InLayerClass('Signal Layers') AND IsTrack))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDARC4UB">Rule</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAXC4UB">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAJD4UB">Silk primitive without silk layer</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAPD4UB">Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAVD4UB">Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA1D4UB">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">29</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAJU4UB">Hole To Hole Clearance (Gap=0.203mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAPU4UB">Hole Size Constraint (Min=0.61mm) (Max=2540mm) (All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDABV4UB">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAHV4UB">Width Constraint (Min=0.254mm) (Max=2540mm) (Preferred=0.61mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDANV4UB">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDATV4UB">Clearance Constraint (Gap=0.305mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAZV4UB">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA5V4UB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">35</td>
+</tr>
+</table><br><hr><a name="IDA2B4UB"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),(IsPad)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1144mil|Location2.X=1476mil|Location1.Y=2549mil|Location2.Y=2581mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1144mil|Location2.X=1476mil|Location1.Y=2549mil|Location2.Y=2581mil|Absolute=True">Track (4.064mm,39.751mm)(11.684mm,39.751mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1345.516mil|Location2.X=1432.516mil|Location1.Y=2531mil|Location2.Y=2599mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1345.516mil|Location2.X=1432.516mil|Location1.Y=2531mil|Location2.Y=2599mil|Absolute=True">Pad U2-2(9.881mm,39.751mm)  Top</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAXC4UB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1427.5mil|Location2.X=1503.335mil|Location1.Y=1662.5mil|Location2.Y=1784.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1427.5mil|Location2.X=1503.335mil|Location1.Y=1662.5mil|Location2.Y=1784.456mil|Absolute=True">Net Antennae: Via (11.684mm,17.653mm) Top to Bottom</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1342.5mil|Location2.X=1418.335mil|Location1.Y=1662.5mil|Location2.Y=1784.456mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1342.5mil|Location2.X=1418.335mil|Location1.Y=1662.5mil|Location2.Y=1784.456mil|Absolute=True">Net Antennae: Via (9.525mm,17.653mm) Top to Bottom</acronym></a><br></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDA1D4UB"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True">Pad U3-31(13.614mm,20.479mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1759.764mil|Location2.Y=1789.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1759.764mil|Location2.Y=1789.764mil|Absolute=True">Pad U3-32(13.614mm,19.679mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True">Pad U3-30(13.614mm,21.279mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True">Pad U3-31(13.614mm,20.479mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True">Pad U3-29(13.614mm,22.079mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True">Pad U3-30(13.614mm,21.279mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True">Pad U3-28(13.614mm,22.885mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True">Pad U3-29(13.614mm,22.079mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True">Pad U3-27(13.614mm,23.698mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True">Pad U3-28(13.614mm,22.885mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True">Pad U3-26(13.614mm,24.486mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True">Pad U3-27(13.614mm,23.698mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1981mil|Location2.Y=2011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1981mil|Location2.Y=2011mil|Absolute=True">Pad U3-25(13.614mm,25.298mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1507mil|Location2.X=1565mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True">Pad U3-26(13.614mm,24.486mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-23(15.9mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579mil|Location2.X=1609mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579mil|Location2.X=1609mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-24(15.088mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-22(16.688mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-23(15.9mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-21(17.501mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-22(16.688mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-20(18.307mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-21(17.501mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-19(19.107mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-20(18.307mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-18(19.907mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-19(19.107mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1800.236mil|Location2.X=1830.236mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1800.236mil|Location2.X=1830.236mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-17(20.707mm,26.772mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=2025mil|Location2.Y=2083mil|Absolute=True">Pad U3-18(19.907mm,26.772mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True">Pad U3-15(22.2mm,24.486mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1981mil|Location2.Y=2011mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1981mil|Location2.Y=2011mil|Absolute=True">Pad U3-16(22.2mm,25.298mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True">Pad U3-14(22.2mm,23.698mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1949mil|Location2.Y=1979mil|Absolute=True">Pad U3-15(22.2mm,24.486mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True">Pad U3-13(22.2mm,22.885mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1918mil|Location2.Y=1948mil|Absolute=True">Pad U3-14(22.2mm,23.698mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True">Pad U3-12(22.2mm,22.079mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1886mil|Location2.Y=1916mil|Absolute=True">Pad U3-13(22.2mm,22.885mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True">Pad U3-11(22.2mm,21.279mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1854.252mil|Location2.Y=1884.252mil|Absolute=True">Pad U3-12(22.2mm,22.079mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True">Pad U3-10(22.2mm,20.479mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1822.756mil|Location2.Y=1852.756mil|Absolute=True">Pad U3-11(22.2mm,21.279mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1759.764mil|Location2.Y=1789.764mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1759.764mil|Location2.Y=1789.764mil|Absolute=True">Pad U3-9(22.2mm,19.679mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1845mil|Location2.X=1903mil|Location1.Y=1791.26mil|Location2.Y=1821.26mil|Absolute=True">Pad U3-10(22.2mm,20.479mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-7(19.907mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1800.236mil|Location2.X=1830.236mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1800.236mil|Location2.X=1830.236mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-8(20.707mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-6(19.107mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1768.74mil|Location2.X=1798.74mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-7(19.907mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-5(18.307mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1737.244mil|Location2.X=1767.244mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-6(19.107mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-4(17.501mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1705.748mil|Location2.X=1735.748mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-5(18.307mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-3(16.688mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1674mil|Location2.X=1704mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-4(17.501mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-2(15.9mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1642mil|Location2.X=1672mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-3(16.688mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579mil|Location2.X=1609mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1579mil|Location2.X=1609mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-1(15.088mm,18.186mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1611mil|Location2.X=1641mil|Location1.Y=1687mil|Location2.Y=1745mil|Absolute=True">Pad U3-2(15.9mm,18.186mm)  Top</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1701mil|Location2.X=1749mil|Location1.Y=2508.992mil|Location2.Y=2576.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1701mil|Location2.X=1749mil|Location1.Y=2508.992mil|Location2.Y=2576.992mil|Absolute=True">Pad R5-1(18.415mm,39.192mm)  Bottom</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1701mil|Location2.X=1749mil|Location1.Y=2584mil|Location2.Y=2652mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1701mil|Location2.X=1749mil|Location1.Y=2584mil|Location2.Y=2652mil|Absolute=True">Pad R5-2(18.415mm,41.097mm)  Bottom</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAPU4UB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.61mm) (Max=2540mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.375mil|Location2.X=1735.454mil|Location1.Y=1791.375mil|Location2.Y=1816.039mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1711.375mil|Location2.X=1735.454mil|Location1.Y=1791.375mil|Location2.Y=1816.039mil|Absolute=True">Hole Size Constraint (0.406mm &lt; 0.61mm) : Via (18.288mm,20.32mm) Top to Bottom</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1626.375mil|Location2.X=1650.454mil|Location1.Y=1766.375mil|Location2.Y=1791.039mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1626.375mil|Location2.X=1650.454mil|Location1.Y=1766.375mil|Location2.Y=1791.039mil|Absolute=True">Hole Size Constraint (0.406mm &lt; 0.61mm) : Via (16.129mm,19.685mm) Top to Bottom</acronym></a><br></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDA5V4UB"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1144mil|Location2.X=1476mil|Location1.Y=2549mil|Location2.Y=2581mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1144mil|Location2.X=1476mil|Location1.Y=2549mil|Location2.Y=2581mil|Absolute=True">Track (4.064mm,39.751mm)(11.684mm,39.751mm)  Top</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1345.516mil|Location2.X=1432.516mil|Location1.Y=2531mil|Location2.Y=2599mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1345.516mil|Location2.X=1432.516mil|Location1.Y=2531mil|Location2.Y=2599mil|Absolute=True">Pad U2-2(9.881mm,39.751mm)  Top</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>

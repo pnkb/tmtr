@@ -1,0 +1,134 @@
+Protel Design System Design Rule Check
+PCB File : D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc
+Date     : 1/16/2015
+Time     : 7:35:36 PM
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) (IsVia),(IsVia)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) (IsPad),(IsVia)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) (IsPad),(IsPad)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),(IsVia)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),(IsPad)
+   Violation between Track (4.064mm,39.751mm)(11.684mm,39.751mm)  Top and 
+                     Pad U2-2(9.881mm,39.751mm)  Top
+Rule Violations :1
+
+Processing Rule : Clearance Constraint (Gap=0.203mm) ((InLayerClass('Signal Layers') AND IsTrack)),((InLayerClass('Signal Layers') AND IsTrack))
+Rule Violations :0
+
+Processing Rule : Rule
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Via (11.684mm,17.653mm) Top to Bottom
+   Violation between Net Antennae: Via (9.525mm,17.653mm) Top to Bottom
+Rule Violations :2
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Pad U3-31(13.614mm,20.479mm)  Top and 
+                     Pad U3-32(13.614mm,19.679mm)  Top
+   Violation between Pad U3-30(13.614mm,21.279mm)  Top and 
+                     Pad U3-31(13.614mm,20.479mm)  Top
+   Violation between Pad U3-29(13.614mm,22.079mm)  Top and 
+                     Pad U3-30(13.614mm,21.279mm)  Top
+   Violation between Pad U3-28(13.614mm,22.885mm)  Top and 
+                     Pad U3-29(13.614mm,22.079mm)  Top
+   Violation between Pad U3-27(13.614mm,23.698mm)  Top and 
+                     Pad U3-28(13.614mm,22.885mm)  Top
+   Violation between Pad U3-26(13.614mm,24.486mm)  Top and 
+                     Pad U3-27(13.614mm,23.698mm)  Top
+   Violation between Pad U3-25(13.614mm,25.298mm)  Top and 
+                     Pad U3-26(13.614mm,24.486mm)  Top
+   Violation between Pad U3-23(15.9mm,26.772mm)  Top and 
+                     Pad U3-24(15.088mm,26.772mm)  Top
+   Violation between Pad U3-22(16.688mm,26.772mm)  Top and 
+                     Pad U3-23(15.9mm,26.772mm)  Top
+   Violation between Pad U3-21(17.501mm,26.772mm)  Top and 
+                     Pad U3-22(16.688mm,26.772mm)  Top
+   Violation between Pad U3-20(18.307mm,26.772mm)  Top and 
+                     Pad U3-21(17.501mm,26.772mm)  Top
+   Violation between Pad U3-19(19.107mm,26.772mm)  Top and 
+                     Pad U3-20(18.307mm,26.772mm)  Top
+   Violation between Pad U3-18(19.907mm,26.772mm)  Top and 
+                     Pad U3-19(19.107mm,26.772mm)  Top
+   Violation between Pad U3-17(20.707mm,26.772mm)  Top and 
+                     Pad U3-18(19.907mm,26.772mm)  Top
+   Violation between Pad U3-15(22.2mm,24.486mm)  Top and 
+                     Pad U3-16(22.2mm,25.298mm)  Top
+   Violation between Pad U3-14(22.2mm,23.698mm)  Top and 
+                     Pad U3-15(22.2mm,24.486mm)  Top
+   Violation between Pad U3-13(22.2mm,22.885mm)  Top and 
+                     Pad U3-14(22.2mm,23.698mm)  Top
+   Violation between Pad U3-12(22.2mm,22.079mm)  Top and 
+                     Pad U3-13(22.2mm,22.885mm)  Top
+   Violation between Pad U3-11(22.2mm,21.279mm)  Top and 
+                     Pad U3-12(22.2mm,22.079mm)  Top
+   Violation between Pad U3-10(22.2mm,20.479mm)  Top and 
+                     Pad U3-11(22.2mm,21.279mm)  Top
+   Violation between Pad U3-9(22.2mm,19.679mm)  Top and 
+                     Pad U3-10(22.2mm,20.479mm)  Top
+   Violation between Pad U3-7(19.907mm,18.186mm)  Top and 
+                     Pad U3-8(20.707mm,18.186mm)  Top
+   Violation between Pad U3-6(19.107mm,18.186mm)  Top and 
+                     Pad U3-7(19.907mm,18.186mm)  Top
+   Violation between Pad U3-5(18.307mm,18.186mm)  Top and 
+                     Pad U3-6(19.107mm,18.186mm)  Top
+   Violation between Pad U3-4(17.501mm,18.186mm)  Top and 
+                     Pad U3-5(18.307mm,18.186mm)  Top
+   Violation between Pad U3-3(16.688mm,18.186mm)  Top and 
+                     Pad U3-4(17.501mm,18.186mm)  Top
+   Violation between Pad U3-2(15.9mm,18.186mm)  Top and 
+                     Pad U3-3(16.688mm,18.186mm)  Top
+   Violation between Pad U3-1(15.088mm,18.186mm)  Top and 
+                     Pad U3-2(15.9mm,18.186mm)  Top
+   Violation between Pad R5-1(18.415mm,39.192mm)  Bottom and 
+                     Pad R5-2(18.415mm,41.097mm)  Bottom
+Rule Violations :29
+
+Processing Rule : Hole To Hole Clearance (Gap=0.203mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.61mm) (Max=2540mm) (All)
+   Violation between Hole Size Constraint (0.406mm < 0.61mm) : Via (18.288mm,20.32mm) Top to Bottom
+   Violation between Hole Size Constraint (0.406mm < 0.61mm) : Via (16.129mm,19.685mm) Top to Bottom
+Rule Violations :2
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=2540mm) (Preferred=0.61mm) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.305mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Track (4.064mm,39.751mm)(11.684mm,39.751mm)  Top and 
+                     Pad U2-2(9.881mm,39.751mm)  Top
+Rule Violations :1
+
+
+Violations Detected : 35
+Time Elapsed        : 00:00:01
