@@ -122,6 +122,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
+DocumentPath=CAMtastic2.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document7]
 DocumentPath=CAMtastic1.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -139,58 +156,62 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.EXTREP
+DocumentPath=Project Outputs for tmtr_board_rev1\Design Rule Check - tmtr_board_rev1.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBL
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBO
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBS
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GD1
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GG1
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GM1
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GM29
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTL
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GM29
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTO
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTS
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=tmtr_board_rev1.LOG
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.REP
+DocumentPath=tmtr_board_rev1.LOG
 DItemRevisionGUID=
 
 [GeneratedDocument14]
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument15]
 DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.RUL
 DItemRevisionGUID=
 
