@@ -49,8 +49,8 @@ Generating : Bottom
 
 
 Used DCodes :
-    D10
-    D17
+    D14
+    D20
     D21
     D22
     D23
@@ -141,8 +141,8 @@ Generating : Bottom Solder
 
 Used DCodes :
     D26
-    D49
-    D56
+    D53
+    D59
     D60
     D61
     D62
@@ -216,7 +216,7 @@ Generating : Drill Drawing
 
 Used DCodes :
     D26
-    D71
+    D70
     D73
 *************************************************************
 
@@ -233,6 +233,6 @@ Generating : Drill Guide
 
 Used DCodes :
     D26
-    D71
+    D70
 *************************************************************
 
