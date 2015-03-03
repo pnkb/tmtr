@@ -122,7 +122,24 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
-DocumentPath=CAMtastic1.Cam
+DocumentPath=CAMtastic5.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document7]
+DocumentPath=CAMtastic6.Cam
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -147,54 +164,22 @@ DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument4]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBO
-DItemRevisionGUID=
-
-[GeneratedDocument5]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument6]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GD1
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GG1
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GM1
-DItemRevisionGUID=
-
-[GeneratedDocument9]
 DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GM29
 DItemRevisionGUID=
 
-[GeneratedDocument10]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTL
+[GeneratedDocument4]
+DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument11]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument12]
-DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument13]
+[GeneratedDocument5]
 DocumentPath=tmtr_board_rev1.LOG
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.REP
 DItemRevisionGUID=
 
-[GeneratedDocument15]
+[GeneratedDocument7]
 DocumentPath=Project Outputs for tmtr_board_rev1\tmtr_board_rev1.RUL
 DItemRevisionGUID=
 
@@ -565,7 +550,45 @@ OutputName3=Drill Drawing/Guides
 OutputDocumentPath3=
 OutputVariantName3=
 OutputDefault3=0
-PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+PageOptions3=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=2.22|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration3_Name1=OutputConfigurationParameter1
+Configuration3_Item1=DesignatorDisplayMode=Physical|PrintArea=DesignExtent|PrintAreaLowerLeftCornerX=0|PrintAreaLowerLeftCornerY=0|PrintAreaUpperRightCornerX=0|PrintAreaUpperRightCornerY=0|Record=PcbPrintView
+Configuration3_Name2=OutputConfigurationParameter2
+Configuration3_Item2=IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=0|Mirror=False|Name=Drill Drawing For (Bottom,Top)|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False
+Configuration3_Name3=OutputConfigurationParameter3
+Configuration3_Item3=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=BottomLayer|DLayer2=TopLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=DrillDrawing|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name4=OutputConfigurationParameter4
+Configuration3_Item4=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name5=OutputConfigurationParameter5
+Configuration3_Item5=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical4|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name6=OutputConfigurationParameter6
+Configuration3_Item6=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical6|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name7=OutputConfigurationParameter7
+Configuration3_Item7=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical13|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name8=OutputConfigurationParameter8
+Configuration3_Item8=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical16|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name9=OutputConfigurationParameter9
+Configuration3_Item9=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical20|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name10=OutputConfigurationParameter10
+Configuration3_Item10=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical27|Polygon=Full|PrintOutIndex=0|Record=PcbPrintLayer
+Configuration3_Name11=OutputConfigurationParameter11
+Configuration3_Item11=IncludeBottomLayerComponents=True|IncludeMultiLayerComponents=True|IncludeTopLayerComponents=True|IncludeViewports=True|Index=1|Mirror=False|Name=Drill Guide For (Bottom,Top)|PadNumberFontSize=14|Record=PcbPrintOut|ShowHoles=False|ShowPadNets=False|ShowPadNumbers=False|SubstituteFonts=False
+Configuration3_Name12=OutputConfigurationParameter12
+Configuration3_Item12=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=BottomLayer|DLayer2=TopLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=DrillGuide|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name13=OutputConfigurationParameter13
+Configuration3_Item13=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical1|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name14=OutputConfigurationParameter14
+Configuration3_Item14=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical4|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name15=OutputConfigurationParameter15
+Configuration3_Item15=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical6|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name16=OutputConfigurationParameter16
+Configuration3_Item16=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical13|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name17=OutputConfigurationParameter17
+Configuration3_Item17=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical16|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name18=OutputConfigurationParameter18
+Configuration3_Item18=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical20|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
+Configuration3_Name19=OutputConfigurationParameter19
+Configuration3_Item19=CArc=Full|CFill=Full|Comment=Full|Coordinate=Full|CPad=Full|CRegion=Full|CText=Full|CTrack=Full|CVia=Full|DDSymbolKind=0|DDSymbolSize=500000|DDSymbolSortKind=0|Designator=Full|Dimension=Full|DLayer1=TopLayer|DLayer2=BottomLayer|FArc=Full|FFill=Full|FPad=Full|FRegion=Full|FText=Full|FTrack=Full|FVia=Full|Layer=Mechanical27|Polygon=Full|PrintOutIndex=1|Record=PcbPrintLayer
 OutputType4=Final
 OutputName4=Final Artwork Prints
 OutputDocumentPath4=
@@ -588,6 +611,8 @@ OutputName7=NC Drill Files
 OutputDocumentPath7=
 OutputVariantName7=
 OutputDefault7=0
+Configuration7_Name1=OutputConfigurationParameter1
+Configuration7_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=True|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Metric|ZeroesMode=SuppressTrailingZeroes
 OutputType8=ODB
 OutputName8=ODB++ Files
 OutputDocumentPath8=
