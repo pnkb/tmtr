@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\svn\tmtr\trunk\Schematic\Imported tmtr_board_rev1.PrjPcb\tmtr_board_rev1.PcbDoc
-Date     : 1/30/2015
-Time     : 7:57:19 PM
+Date     : 2/3/2015
+Time     : 11:00:11 PM
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
@@ -104,15 +104,17 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=16mil) (All),(All)
                      Pad J1-2(715mil,250mil)  Multi-Layer
    Violation between Pad R9-1(835mil,362.598mil)  Bottom and 
                      Pad J1-1(815mil,250mil)  Multi-Layer
+   Violation between Via (1335mil,285mil) Top to Bottom and 
+                     Pad Free-1(1299.213mil,157.48mil)  Multi-Layer
    Violation between Pad R9-2(835mil,438mil)  Bottom and 
                      Pad R9-1(835mil,362.598mil)  Bottom
    Violation between Pad R3-2(615mil,438mil)  Bottom and 
                      Pad R3-1(615mil,362.598mil)  Bottom
    Violation between Pad R4-2(715mil,362mil)  Bottom and 
                      Pad R4-1(715mil,437.402mil)  Bottom
-   Violation between Pad C2-1(275mil,710.63mil)  Bottom and 
-                     Pad C2-2(275mil,790mil)  Bottom
    Violation between Pad C4-2(275mil,860mil)  Bottom and 
+                     Pad C2-2(275mil,790mil)  Bottom
+   Violation between Pad C2-1(275mil,710.63mil)  Bottom and 
                      Pad C2-2(275mil,790mil)  Bottom
    Violation between Pad C9-1(815mil,929.567mil)  Bottom and 
                      Pad C11-1(870mil,875.433mil)  Bottom
@@ -152,7 +154,7 @@ Processing Rule : Minimum Solder Mask Sliver (Gap=16mil) (All),(All)
                      Pad L2-2(745mil,994mil)  Bottom
    Violation between Pad C9-2(815mil,1001mil)  Bottom and 
                      Pad L2-2(745mil,994mil)  Bottom
-Rule Violations :62
+Rule Violations :63
 
 Processing Rule : Silk To Solder Mask (Clearance=10mil) (Disabled)(IsPad),(All)
 Rule Violations :0
@@ -171,24 +173,76 @@ Rule Violations :2
 Processing Rule : Rule
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=8mil) ((InLayerClass('Signal Layers') AND IsTrack)),((InLayerClass('Signal Layers') AND IsTrack))
+Processing Rule : Clearance Constraint (Gap=12mil) ((InLayerClass('Signal Layers') AND IsTrack)),((InLayerClass('Signal Layers') AND IsTrack))
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=8mil) ((InLayerClass('Signal Layers') AND IsTrack)),(IsPad)
+Processing Rule : Clearance Constraint (Gap=12mil) ((InLayerClass('Signal Layers') AND IsTrack)),(IsPad)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=8mil) ((InLayerClass('Signal Layers') AND IsTrack)),(IsVia)
+Processing Rule : Clearance Constraint (Gap=12mil) ((InLayerClass('Signal Layers') AND IsTrack)),(IsVia)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=8mil) (IsPad),(IsPad)
+Processing Rule : Clearance Constraint (Gap=12mil) (IsPad),(IsPad)
+   Violation between Pad U3-2(626mil,716mil)  Top and 
+                     Pad U3-1(594mil,716mil)  Top
+   Violation between Pad U3-3(657mil,716mil)  Top and 
+                     Pad U3-2(626mil,716mil)  Top
+   Violation between Pad U3-4(689mil,716mil)  Top and 
+                     Pad U3-3(657mil,716mil)  Top
+   Violation between Pad U3-5(720.748mil,716mil)  Top and 
+                     Pad U3-4(689mil,716mil)  Top
+   Violation between Pad U3-6(752.244mil,716mil)  Top and 
+                     Pad U3-5(720.748mil,716mil)  Top
+   Violation between Pad U3-7(783.74mil,716mil)  Top and 
+                     Pad U3-6(752.244mil,716mil)  Top
+   Violation between Pad U3-8(815.236mil,716mil)  Top and 
+                     Pad U3-7(783.74mil,716mil)  Top
+   Violation between Pad U3-10(874mil,806.26mil)  Top and 
+                     Pad U3-9(874mil,774.764mil)  Top
+   Violation between Pad U3-11(874mil,837.756mil)  Top and 
+                     Pad U3-10(874mil,806.26mil)  Top
+   Violation between Pad U3-12(874mil,869.252mil)  Top and 
+                     Pad U3-11(874mil,837.756mil)  Top
+   Violation between Pad U3-13(874mil,901mil)  Top and 
+                     Pad U3-12(874mil,869.252mil)  Top
+   Violation between Pad U3-14(874mil,933mil)  Top and 
+                     Pad U3-13(874mil,901mil)  Top
+   Violation between Pad U3-15(874mil,964mil)  Top and 
+                     Pad U3-14(874mil,933mil)  Top
+   Violation between Pad U3-16(874mil,996mil)  Top and 
+                     Pad U3-15(874mil,964mil)  Top
+   Violation between Pad U3-18(783.74mil,1054mil)  Top and 
+                     Pad U3-17(815.236mil,1054mil)  Top
+   Violation between Pad U3-19(752.244mil,1054mil)  Top and 
+                     Pad U3-18(783.74mil,1054mil)  Top
+   Violation between Pad U3-20(720.748mil,1054mil)  Top and 
+                     Pad U3-19(752.244mil,1054mil)  Top
+   Violation between Pad U3-21(689mil,1054mil)  Top and 
+                     Pad U3-20(720.748mil,1054mil)  Top
+   Violation between Pad U3-22(657mil,1054mil)  Top and 
+                     Pad U3-21(689mil,1054mil)  Top
+   Violation between Pad U3-23(626mil,1054mil)  Top and 
+                     Pad U3-22(657mil,1054mil)  Top
+   Violation between Pad U3-24(594mil,1054mil)  Top and 
+                     Pad U3-23(626mil,1054mil)  Top
+   Violation between Pad U3-28(536mil,901mil)  Top and 
+                     Pad U3-27(536mil,933mil)  Top
+   Violation between Pad U3-29(536mil,869.252mil)  Top and 
+                     Pad U3-28(536mil,901mil)  Top
+   Violation between Pad U3-30(536mil,837.756mil)  Top and 
+                     Pad U3-29(536mil,869.252mil)  Top
+   Violation between Pad U3-31(536mil,806.26mil)  Top and 
+                     Pad U3-30(536mil,837.756mil)  Top
+   Violation between Pad U3-32(536mil,774.764mil)  Top and 
+                     Pad U3-31(536mil,806.26mil)  Top
+Rule Violations :26
+
+Processing Rule : Clearance Constraint (Gap=12mil) (IsPad),(IsVia)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=8mil) (IsPad),(IsVia)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=8mil) (IsVia),(IsVia)
+Processing Rule : Clearance Constraint (Gap=12mil) (IsVia),(IsVia)
 Rule Violations :0
 
 
-Violations Detected : 64
+Violations Detected : 91
 Time Elapsed        : 00:00:02

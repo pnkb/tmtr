@@ -1,22 +1,13 @@
-Output: Gerber Files
-Type  : Gerber
-From  : Variant [[No Variations]] of Project [tmtr_board_rev1.PrjPcb]
-   Generated File[tmtr_board_rev1.GTL]
-   Generated File[tmtr_board_rev1.GBL]
-   Generated File[tmtr_board_rev1.GTO]
-   Generated File[tmtr_board_rev1.GTS]
-   Generated File[tmtr_board_rev1.GBS]
-   Generated File[tmtr_board_rev1.GBO]
-   Generated File[tmtr_board_rev1.GM1]
-   Generated File[tmtr_board_rev1.GM29]
-   Generated File[tmtr_board_rev1.GD1]
-   Generated File[tmtr_board_rev1.GG1]
-   Generated File[tmtr_board_rev1.RUL]
-   Generated File[tmtr_board_rev1.EXTREP]
-   Generated File[tmtr_board_rev1.REP]
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [tmtr_board_rev1.PrjPcb]
+   Generated File[tmtr_board_rev1.TXT]
+   Generated File[tmtr_board_rev1.DRL]
+   Generated File[tmtr_board_rev1.LDP]
+   Generated File[tmtr_board_rev1.DRR]
 
 
-Files Generated   : 13
+Files Generated   : 4
 Documents Printed : 0
 
-Finished Output Generation At 8:01:35 PM On 1/30/2015
+Finished Output Generation At 11:42:38 PM On 2/3/2015
