@@ -1,0 +1,18 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: tmtr_board_rev1.PcbDoc   2/3/2015  11:42:38 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top to Bottom
+ASCII RoundHoles File : tmtr_board_rev1.TXT
+EIA File   : tmtr_board_rev1.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.8mm (31.496mil)        Round          1                0.00 mm (0.00 Inch)
+T2        0.8128mm (32mil)         Round          24               155.57 mm (6.12 Inch)
+T3        1.016mm (40mil)          Round          35               162.33 mm (6.39 Inch)
+T4        3.2004mm (126mil)        Round          2                29.00 mm (1.14 Inch)
+---------------------------------------------------------------------------
+Totals                                            62               346.90 mm (13.66 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
